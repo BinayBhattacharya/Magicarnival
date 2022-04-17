@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import "./Header.css"
-import Logo from "files/logonew.png"
+import Logo from "../../files/logonew.png"
 
 const Header = () => {
 
