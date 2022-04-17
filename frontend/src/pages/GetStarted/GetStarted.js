@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { startDAction } from "../../actions/startDataAction";
 import "./GetStarted.css";
 // import "./styleHome.css";
 
 const GetStarted = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    lastName: "",
+    email: "",
+    contact: "",
+    budget: "",
+    description: "",
+  });
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+
+    console.log(formData);
+    const data = await startDAction(formData);
+    console.log(data);
+  };
+  // const [fullname, setFullname] = useState("");
+  // const [lastname, setLastname] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [contact, setContact] = useState("");
+
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -59,11 +81,18 @@ const GetStarted = () => {
                   CONTACT INFO : +91 7979033873
                 </div>
               </div>
-              <form action="submission.html" method>
+              <form onSubmit={submitHandler}>
                 <div className="screen-body-item">
                   <div className="app-form">
                     <div className="app-form-group">
                       <input
+                        value={formData.firstName}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            firstName: e.target.value,
+                          })
+                        }
                         type="text"
                         className="app-form-control"
                         placeholder="first name"
@@ -72,6 +101,13 @@ const GetStarted = () => {
                     </div>
                     <div className="app-form-group">
                       <input
+                        value={formData.lastName}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            lastName: e.target.value,
+                          })
+                        }
                         type="text"
                         className="app-form-control"
                         placeholder="last name"
@@ -80,6 +116,13 @@ const GetStarted = () => {
                     </div>
                     <div className="app-form-group">
                       <input
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            email: e.target.value,
+                          })
+                        }
                         type="email"
                         className="app-form-control"
                         placeholder="Email ID"
@@ -88,6 +131,13 @@ const GetStarted = () => {
                     </div>
                     <div className="app-form-group">
                       <input
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            contact: e.target.value,
+                          })
+                        }
+                        value={formData.contact}
                         type="text"
                         className="app-form-control"
                         placeholder="Contact No."
@@ -96,6 +146,13 @@ const GetStarted = () => {
                     </div>
                     <div className="app-form-group message">
                       <input
+                        value={formData.description}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            description: e.target.value,
+                          })
+                        }
                         className="app-form-control"
                         placeholder="Describe your project"
                       />
@@ -103,7 +160,17 @@ const GetStarted = () => {
                     <br />
                     <br />
                     <div>
-                      <label htmlFor="budget" className="formtext">
+                      <label
+                        value={formData.budget}
+                        onChange={(e) =>
+                          setFormData({
+                            ...formData,
+                            budget: e.target.value,
+                          })
+                        }
+                        htmlFor="budget"
+                        className="formtext"
+                      >
                         Enter your budget
                       </label>
                       <br />

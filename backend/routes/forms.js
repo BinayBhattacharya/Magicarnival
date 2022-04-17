@@ -43,6 +43,7 @@ router.post("/api/get_started", async (req, res) => {
       throw new Error("Invalid user data");
     }
   } catch (error) {
+    // console.log("Yoooo");
     res.status(401).send(error.message);
   }
 });
