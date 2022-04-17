@@ -29,6 +29,15 @@ function App() {
           <Route exact path="/submission" component={Submission}>
             <Submission />
           </Route>
+          <Route exact path="/aboutus" component={Aboutus}>
+            <Aboutus />
+          </Route>
+          <Route exact path="/blog" component={Blog}>
+            <Blog />
+          </Route>
+          <Route exact path="/faq" component={Faq}>
+            <Faq />
+          </Route>
         </Switch>
         <Footer />
       </div>
