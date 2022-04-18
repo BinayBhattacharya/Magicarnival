@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./getstarted.css";
+import { useEffect} from "react";
+import Submission from "../Submission/Submission";
 
 const Getstarted = () => {
+  useEffect(() => {
+    document.title = "Request a Quote | Magicarnival"
+  }, [])
   const [formData, setFormData] = useState({
     fullName: "",
     lastName: "",
@@ -35,15 +40,16 @@ const Getstarted = () => {
           </div>
           <div className="screen-body">
             <div className="screen-body-item left">
-              <div className="app-title">
+              <div className="app-title" style={{display:"flex", flexDirection:"column", alignItems:"flex-start",}}>
                 <span>CONTACT</span>
                 <span>US</span>
+                <span style={{fontWeight:"700", fontSize:"15px", paddingTop:"10px",}}>WE REPLY WITHIN 12 HOURS</span>
               </div>
               <div className="app-contact" style={{ fontSize: "10px" }}>
                 CONTACT INFO : +91 7979033873
               </div>
             </div>
-            <form onClick={submitHandler} method>
+            <form onClick={Submission} method>
               <div className="screen-body-item">
                 <div className="app-form">
                   <div className="app-form-group">
@@ -104,7 +110,7 @@ const Getstarted = () => {
                   <br />
                   <br />
                   <div className="app-form-group buttons">
-                    <button className="app-form-button">CANCEL</button>
+                    
                     <button className="app-form-button">SEND</button>
                   </div>
                 </div>

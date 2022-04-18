@@ -1,7 +1,10 @@
 import React from 'react'
 import './/Portfolio.css'
-
+import { useEffect} from "react";
 const Portfolio = () => {
+  useEffect(() => {
+    document.title = "Portfolio | Magicarnival"
+  }, [])
   return (
     <div>
         <h1>Portfolio.</h1>

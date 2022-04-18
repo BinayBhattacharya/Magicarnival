@@ -1,7 +1,10 @@
 import React from 'react'
 import './/Submission.css'
-
+import { useEffect} from "react";
 const Submission = () => {
+  useEffect(() => {
+    document.title = "Successfully Submitted | Magicarnival"
+  }, [])
   return (
     <div className="background">
     <div className="container1">

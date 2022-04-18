@@ -38,6 +38,10 @@ function App() {
           <Route exact path="/faq" component={Faq}>
             <Faq />
           </Route>
+          <Route exact path="../Submission/Submission" component={Submission}>
+            <Submission />
+          </Route>
+          
         </Switch>
         <Footer />
       </div>

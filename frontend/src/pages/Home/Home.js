@@ -1,8 +1,13 @@
 import React from "react";
 import ".//Home.css";
-import backWall from "../../files/dora3.PNG";
+import backWall from "../../files/cover2.PNG";
 
+
+import { useEffect} from "react";
 const Home = () => {
+  useEffect(() => {
+    document.title = "Professional Animated Videos | Magicarnival"
+  }, [])
   return (
     <div>
       <img src={backWall} alt="back image" id="backimage" />
@@ -11,9 +16,11 @@ const Home = () => {
           style={{
             color: "white",
             fontWeight: "200%",
+            marginLeft:"-24%",
             fontFamily:
               '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-          }}
+            
+            }}
         >
           Professional Animated
           <br />
@@ -32,8 +39,8 @@ const Home = () => {
           Call Us&nbsp;&nbsp;&nbsp;&nbsp;7979033873
         </span>
         <br />
-        <span className="contacts">
-          Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info@magicarnival.com
+        <span className="contacts" style={{position:"relative", top:"-20px",}}>
+          Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;magicarnival@gmail.com
         </span>
         <br />
       </header>
@@ -43,6 +50,13 @@ const Home = () => {
           idea, educate, and promote your brand and values. We are an Explainer
           Video Production Company that's here to help you succeed!
         </div>
+
+        <div className="flex-definition">
+        <div id="flex-item-texting">Magicarnival is an Animated Explainer Video Production Company with over two years of experience providing video content services from small startups to established companies.
+          We are trusted by brands because we have an “out-of-the-box” type of thinking while remaining flexible and down-to-earth. Simply put, our passion is to make videos.</div>
+        
+      </div>
+
         <div className="flex-containerHome">
           <div className="flex-itemHome" id="flex-item-1">
             <iframe
@@ -114,9 +128,9 @@ const Home = () => {
         <div id="contpara2">Trusted By Brands.</div>
         <div id="contpara3">
           We’re not just looking for clients… We’re looking for partners. That’s
-          the mindset that has led us to work with hundreds of brands from all
-          over the globe, providing animation and explainer video services from
-          small startups to Fortune 500 companies.
+          the mindset that has led us to work with several brands from different
+          industries, providing animation and explainer video services from
+          small startups to established companies.
         </div>
         <br />
         <br />
